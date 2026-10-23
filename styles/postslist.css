@@ -1,0 +1,134 @@
+/* ===== Posts list page only ===== */
+
+body {
+  background-color: #ffeedd;
+}
+
+/* Two posts per row, always. An odd last post is centred. */
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 100px 0 40px;
+}
+
+.post {
+  width: 40%;
+  margin: 15px 5%;
+  display: flex;
+  min-height: 135px;
+  background-color: #e6e6e6;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(150, 90, 100, 0.45);
+  transition: box-shadow 0.2s ease;
+}
+
+.post:hover {
+  box-shadow: 0 10px 25px rgba(150, 90, 70, 0.5);
+}
+
+/* Username column (white, on the left) */
+.post-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  color: #666;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0 14px;
+  min-width: 60px;
+  max-width: 120px;
+}
+
+/* Title + text + icons */
+.post-body {
+  position: relative;
+  flex: 1;
+  padding: 10px 50px 30px 20px;
+}
+
+.post-title {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: normal;
+  color: #888;
+}
+
+/* Show only the first three lines of the text */
+.post-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 18px;
+  color: #000;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 17px;
+  color: #777;
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  color: #444;
+}
+
+.more-link {
+  position: absolute;
+  bottom: 6px;
+  right: 18px;
+  color: #777;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.more-link:hover {
+  color: #444;
+}
+
+/* Delete confirmation modal */
+.delete-modal {
+  padding: 28px 20px 24px;
+}
+
+.delete-question {
+  margin: 0 0 30px;
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+}
+
+.delete-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm-btn {
+  width: 80px;
+  height: 35px;
+}
+
+.btn-red {
+  background-color: #d9363e;
+  color: #fff;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-red:hover {
+  background-color: #c12d34;
+}

@@ -1,0 +1,54 @@
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #777;      
+}
+
+.center-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
+}
+
+.btn-yellow {
+  width: 125px;
+  height: 42px;
+  background-color: #cdb43a;
+  color: #000;
+  border: 2px outset #999;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-yellow:hover {
+  background-color: #b89f2e;
+}
+
+/* Create Post modal */
+#createPostModal textarea {
+  height: 280px;
+  resize: vertical;
+}
+
+.center-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.center-row .btn-green {
+  width: 120px;
+}

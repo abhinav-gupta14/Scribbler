@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScriBBler - Post</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="../styles/common.css">
+  <link rel="stylesheet" href="../styles/post.css">
+</head>
+<body>
+
+  <!-- ================= HEADER (same as home page) ================= -->
+  <header class="header">
+    <div class="brand">
+      <h1 class="logo">ScriBBler</h1>
+      <p class="tagline">Explore, Imagine, Create</p>
+    </div>
+    <div class="auth-buttons">
+      <button type="button" class="btn-blue" id="signUpBtn">Sign Up</button>
+      <button type="button" class="btn-blue" id="signInBtn">Sign In</button>
+    </div>
+  </header>
+
+  <!-- Sign Up modal -->
+  <div class="modal" id="signUpModal">
+    <div class="modal-content small-modal">
+      <div class="modal-header">
+        <h2>Get Started</h2>
+        <span class="close-btn" id="closeSignUp"><i class="fa fa-times"></i></span>
+      </div>
+      <form id="signUpForm">
+        <label for="signUpName">Name</label>
+        <input type="text" id="signUpName" placeholder="Enter your name" required>
+        <label for="signUpUsername">Username</label>
+        <input type="text" id="signUpUsername" placeholder="Enter your username" required>
+        <label for="signUpPassword">Password</label>
+        <input type="password" id="signUpPassword" placeholder="Enter your password" required>
+        <label for="signUpConfirm">Confirm Password</label>
+        <input type="password" id="signUpConfirm" placeholder="Re-enter your password" required>
+        <button type="submit" class="btn-green full-width">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sign In modal -->
+  <div class="modal" id="signInModal">
+    <div class="modal-content small-modal">
+      <div class="modal-header">
+        <h2>Welcome Back!</h2>
+        <span class="close-btn" id="closeSignIn"><i class="fa fa-times"></i></span>
+      </div>
+      <form id="signInForm">
+        <label for="signInUsername">Username</label>
+        <input type="text" id="signInUsername" placeholder="Enter your username" required>
+        <label for="signInPassword">Password</label>
+        <input type="password" id="signInPassword" placeholder="Enter your password" required>
+        <button type="submit" class="btn-green full-width">Sign In</button>
+      </form>
+      <p class="switch-text">Not a member? <a href="#" id="switchToSignUp">Sign Up</a></p>
+    </div>
+  </div>
+
+  <!-- ================= POST ================= -->
+  <main class="post-page">
+    <h1 class="post-title" id="postTitle">Everything you should know about ‘module’ &amp; ‘require’ in Node.js</h1>
+
+    <div class="post-meta">
+      <span class="post-author" id="postAuthor">Srishti Gupta</span>
+      <button type="button" class="edit-btn" id="editSaveBtn">
+        <span id="editSaveLabel">Edit</span> <i class="fa fa-edit" id="editSaveIcon"></i>
+      </button>
+    </div>
+
+    <p class="post-text" id="postText">Node.js treats each JavaScript file as a separate module. For instance, if you have a file containing some code and this file is named xyz.js, then this file is treated as a module in Node, and you can say that you’ve created a module named xyz. Let’s take an example to understand this better. You have a file named circle.js which consists of the logic for calculating the area & the circumference of a circle of a given radius. You can call circle.js file a module named circle. You might be wondering why is there a need to have multiple modules? You could have just written all the code in a single module. Well, it is very important to write modular code. By modular, I mean to say that your code should be independent and should be loosely coupled. Imagine that there’s a large application and you have all your code written in just one place, just one file. Too messy, right? How does the code written inside a module run? Before executing the code written inside a module, Node takes the entire code and encloses it within a function wrapper. The syntax of this function wrapper is: The entire code written inside a module is private to the module, unless explicitly stated (exported) otherwise. This is the most significant advantage of having modules in Node.js. The five parameters — exports, require, module, __filename, __dirname are available inside each module in Node. Though these parameters are global to the code within a module yet they are local to the module (because of the function wrapper as explained above). These parameters provide valuable information related to a module. So, the question that arises now is how do you specify something in a module that can be used by some other module? This is when the module & require parameters of the function wrapper are helpful. Let’s discuss these two parameters in this article. module The module parameter (rather a keyword in a module in Node) refers to the object representing the current module. exports is a key of the module object, the corresponding value of which is an object. The default value of module.exports object is {} (empty object). Whatever is exported from a module can, in turn, be made available to other modules. Exporting something is quite easy. You just need to add it to the module.exports object. There are three ways to add something to the module.exports object to be exported. Let’s discuss these methods one by one.</p>
+
+    <!-- Like -->
+    <div class="like-section">
+      <button type="button" class="like-btn" id="likeBtn"><i class="fa fa-thumbs-up"></i> <span id="likeLabel">Like</span></button>
+      <p class="like-message" id="likeMessage">Be the first one to like this!</p>
+    </div>
+
+    <!-- Comments -->
+    <div class="comment-section">
+      <textarea id="commentInput" placeholder="Leave a comment..."></textarea>
+      <button type="button" class="comment-btn" id="commentBtn">Comment</button>
+
+      <h3 class="comments-heading">All Comments</h3>
+      <div class="comments-box" id="commentsBox"></div>
+    </div>
+  </main>
+
+  <script src="../scripts/common.js"></script>
+  <script src="../scripts/post.js"></script>
+</body>
+</html>
